@@ -2,7 +2,9 @@
 
 import { useState } from 'react';
 import Image from "next/image";
-import { Menu as MenuIcon, X } from 'lucide-react';
+import { IoMdMenu } from "react-icons/io";
+import { MdRestaurantMenu } from "react-icons/md";
+
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io5";
 
@@ -58,7 +60,7 @@ const Header = () => {
           className="md:hidden cursor-pointer text-gray-800"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X size={24} /> : <MenuIcon size={24} />}
+          {isOpen ? <MdRestaurantMenu  size={24} /> : <IoMdMenu size={24} />}
         </button>
       </div>
 

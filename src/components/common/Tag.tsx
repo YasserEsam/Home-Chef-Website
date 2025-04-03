@@ -1,14 +1,21 @@
-import React from 'react'
+import React from 'react';
 
-const Tag = ({icon , name} : {icon : React.ReactNode , name : string}) => {
-  return (
-    <div className='bg-gray-300/30 px-4 py-2 rounded-4xl my-2'>
-        <div className='flex items-center gap-4'>
-            <div className='text-black text-xl'>{icon}</div>
-            <p className='text-sm font-semibold text-gray-600'>{name}</p>
-        </div>
-    </div>
-  )
+interface TagProps {
+  icon?: React.ReactNode;
+  name: string;
+  bgColor?: string; // Optional background color
+  textColor?: string; // Optional text color
 }
 
-export default Tag
+const Tag = ({ icon, name, bgColor = 'bg-gray-300/30', textColor = 'text-gray-600' }: TagProps) => {
+  return (
+    <div className={`${bgColor} px-4 py-2 rounded-4xl my-2`}>
+      <div className='flex items-center gap-4'>
+        {icon && <div className='text-black text-xl'>{icon}</div>} {/* Only render icon if it exists */}
+        <p className={`${textColor} text-sm font-semibold`}>{name}</p>
+      </div>
+    </div>
+  );
+};
+
+export default Tag;
